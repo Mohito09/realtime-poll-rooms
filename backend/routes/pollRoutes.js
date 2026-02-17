@@ -63,7 +63,8 @@ router.post("/:pollId/vote", async (req, res) => {
 
             res.cookie("voterId", voterId, {
                 httpOnly: true,
-                sameSite: "lax"
+                sameSite: "none",
+                secure : true
             });
         }
         const ipAddress =
