@@ -13,8 +13,7 @@ const server = http.createServer(app);
 
 const values = new Server(server, {
     cors: {
-        origin: 
-        ["http://localhost:3000",
+        origin: ["http://localhost:3000",
       "https://realtime-poll-rooms-dun.vercel.app/"],
         credentials: true
     }
@@ -23,7 +22,7 @@ const values = new Server(server, {
 app.use(cors({
     origin:
      ["http://localhost:3000",
-    "https://realtime-poll-rooms-dun.vercel.app/" ],
+    "https://realtime-poll-rooms-dun.vercel.app/"],
     credentials: true
 }));
 

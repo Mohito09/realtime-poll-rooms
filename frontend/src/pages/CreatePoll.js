@@ -14,7 +14,7 @@ const handleOptionChange = (index, value) => {
     const createPoll = async () => {
     try {
         const response = 
-        await axios.post( " https://poll-backend-aqi0.onrender.com/api/polls/create " ,
+        await axios.post( "https://poll-backend-aqi0.onrender.com/api/polls/create",
             { question,options }
         );
         const link = `${window.location.origin}/poll/${response.data.pollId}`;

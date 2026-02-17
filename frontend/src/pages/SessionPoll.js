@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { io } from "socket.io-client";
 
-const socket = io("  https://poll-backend-aqi0.onrender.com  ") ;
+const socket = io("https://poll-backend-aqi0.onrender.com");
 function SessionPoll() {
 
 const { pollId } = useParams();
@@ -14,7 +14,7 @@ useEffect(() => {
    const fetchPoll = async () => {
       try {
       const response = 
-      await axios.get( `https://poll-backend-aqi0.onrender.com/api/polls/${pollId}` ) ;
+      await axios.get(`https://poll-backend-aqi0.onrender.com/api/polls/${pollId}`);
        setPoll(response.data);
         }
         catch (error) {
@@ -32,7 +32,7 @@ useEffect(() => {
     const handleVote = async (optionIndex) => {
         try {
             const response = 
-            await axios.post( `https://poll-backend-aqi0.onrender.com/api/polls/${pollId}/vote` ,
+            await axios.post(`https://poll-backend-aqi0.onrender.com/api/polls/${pollId}/vote`,
                 {     optionIndex },
                 {     withCredentials: true }
             );
