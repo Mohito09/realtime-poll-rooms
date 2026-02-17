@@ -11,7 +11,7 @@ const pollRoutes = require("./routes/pollRoutes");
 const app = express();
 const server = http.createServer(app);
 
-const socketServer = new Server(server, {
+const values = new Server(server, {
     cors: {
         origin: [
             "http://localhost:3000",
