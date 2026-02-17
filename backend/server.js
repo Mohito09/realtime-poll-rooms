@@ -11,20 +11,26 @@ const pollRoutes = require("./routes/pollRoutes");
 const app = express();
 const server = http.createServer(app);
 
-const values = new Server(server, {
+const socketServer = new Server(server, {
     cors: {
-        origin: ["http://localhost:3000",
-      "https://realtime-poll-rooms-dun.vercel.app/"],
+        origin: [
+            "http://localhost:3000",
+            "https://realtime-poll-rooms-dun.vercel.app"
+        ],
+        methods: ["GET", "POST"],
         credentials: true
     }
 });
 
+
 app.use(cors({
-    origin:
-     ["http://localhost:3000",
-    "https://realtime-poll-rooms-dun.vercel.app/"],
+    origin: [
+        "http://localhost:3000",
+        "https://realtime-poll-rooms-dun.vercel.app"
+    ],
     credentials: true
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
