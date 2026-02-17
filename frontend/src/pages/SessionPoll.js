@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000");
+const socket = io("  https://poll-backend-aqi0.onrender.com  ") ;
 function SessionPoll() {
 
 const { pollId } = useParams();
@@ -13,7 +13,8 @@ const [hasVoted, setHasVoted] = useState(false);
 useEffect(() => {
    const fetchPoll = async () => {
       try {
-      const response = await axios.get(`http://localhost:5000/api/polls/${pollId}`);
+      const response = 
+      await axios.get( `https://poll-backend-aqi0.onrender.com/api/polls/${pollId}` ) ;
        setPoll(response.data);
         }
         catch (error) {
@@ -30,7 +31,8 @@ useEffect(() => {
     }, [pollId]);
     const handleVote = async (optionIndex) => {
         try {
-            const response = await axios.post(`http://localhost:5000/api/polls/${pollId}/vote`,
+            const response = 
+            await axios.post( `https://poll-backend-aqi0.onrender.com/api/polls/${pollId}/vote` ,
                 {     optionIndex },
                 {     withCredentials: true }
             );

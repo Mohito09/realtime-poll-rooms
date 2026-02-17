@@ -13,10 +13,11 @@ const handleOptionChange = (index, value) => {
     };
     const createPoll = async () => {
     try {
-        const response = await axios.post( "http://localhost:5000/api/polls/create",
+        const response = 
+        await axios.post( " https://poll-backend-aqi0.onrender.com/api/polls/create " ,
             { question,options }
         );
-        const link = `http://localhost:3000/poll/${response.data.pollId}`;
+        const link = `${window.location.origin}/poll/${response.data.pollId}`;
         setPollLink(link);
     }
     catch (error) {
